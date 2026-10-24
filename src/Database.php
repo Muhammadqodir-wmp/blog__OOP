@@ -7,14 +7,14 @@ class Database
     public $password;
     public $database;
 
-    public function __construct(mixed $username, mixed $servername, mixed $password,  $database)
+    public function __construct(mixed $username, mixed $servername, mixed $password, string $database)
     {
         $this->servername = $servername;
         $this->database = $database;
         $this->username = $username;
         $this->password = $password;
 
-        $this->connect();
+         $this->connect();
     }
 
     public function connect()

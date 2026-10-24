@@ -1,6 +1,10 @@
 <?php
 
-require_once "bootsrap.php";
+require_once "bootstrap.php";
+
+$posts = Post::getAll();
+
+var_dump($posts);
 
 ?>
 
@@ -13,5 +17,14 @@ require_once "bootsrap.php";
 </head>
 <body>
     <h1>OOP blog</h1>
+
+    <ul>
+        <?php foreach($posts as $post):?>
+        <li>
+            <h4><?= $post->id . '  '.  $post->title; ?></h4>
+            <p><?= $post->body; ?></p>
+        </li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
