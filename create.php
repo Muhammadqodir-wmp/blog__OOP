@@ -8,7 +8,10 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
     $result = Post::create($title, $body);
 
-    var_dump($result);
+    if($result == 1){
+        header("Location: index.php");
+        exit;
+    }
 }
 
 
